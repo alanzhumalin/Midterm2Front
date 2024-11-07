@@ -12,14 +12,11 @@
     border-radius: 8px;
     padding: 10px;
     background: #fff;
-    transition: transform 0.3s ease;
     height: 250px; /* Fixed card height */
     text-align: center;
 }
 
-.recipe-card:hover {
-    transform: translateY(-5px); /* Hover effect */
-}
+
 
 .recipe-card img {
     border-radius: 8px;
@@ -44,7 +41,7 @@
     border: none;
     padding: 8px;
     width: 100%;
-    background-color: #007BFF;
+    background-color: #ffaa00;
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -53,7 +50,7 @@
 }
 
 .recipe-card button:hover {
-    background-color: #0056b3;
+    background-color: #b37d00;
 }
 
 #main__text {

@@ -1,4 +1,4 @@
-const apiKey = '46cb6f9457524d87931b3185b02fd3f8';  // This is our API key
+const apiKey = 'd320d175cc0f4564a5f526f1985fb144';  // This is our API key
 const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}`;  // This is the URL to search for recipes
 
 // This function will fetch recipes based on the search query

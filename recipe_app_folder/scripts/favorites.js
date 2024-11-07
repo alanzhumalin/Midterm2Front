@@ -1,5 +1,5 @@
 // This is the key to use the Spoonacular API
-const apiKey = '46cb6f9457524d87931b3185b02fd3f8'; 
+const apiKey = 'd320d175cc0f4564a5f526f1985fb144'; 
 const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}`;
 
 // This function gets information about a recipe using the recipe's ID.
@@ -21,6 +21,7 @@ async function loadFavorites() {
     if (favorites.length === 0) {
         mainText.style.display = 'block'; // Show the message
         mainText.innerHTML = '<p>No favorites added yet!</p>'; // Show a message when there are no favorites
+        container.innerHTML = ''; 
     } else {
         mainText.style.display = 'none'; // Hide the message if there are favorites
 
