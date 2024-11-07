@@ -1,0 +1,115 @@
+/* Header styling */
+.header {
+    background-color: #ffae3d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 15px;
+}
+
+/* Container to center and limit width */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header wrapper for padding */
+.header__wrapper {
+    padding: 9px;
+}
+
+/* Flexbox for the header content */
+.header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Navigation list styling */
+.header__nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+/* Link styling in navigation */
+.header__nav a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Remove list bullets and set font size */
+li {
+    list-style: none;
+    font-size: 25px;
+}
+
+/* Search wrapper flex layout */
+.header__search__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Search icon size */
+.header__search__wrapper img {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+/* Search input and icon styling */
+.header__search {
+    display: flex;
+    position: relative;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Input field styling */
+#search-input {
+    padding: 5px;
+    font-size: 15px;
+    border: 2px solid #ccc;
+    border-radius: 9px;
+    width: 350px;
+    max-width: 100%;
+    outline: none;
+}
+
+/* Media query for smaller screens (max-width 768px) */
+@media (max-width: 768px) {
+    /* Adjusting header title font size */
+    .header__content h1{
+        font-size: 20px;
+    }
+
+    /* Stacking navigation items vertically */
+    .header__nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Media query for very small screens (max-width 341px) */
+@media (max-width: 341px) {
+    /* Adjusting font size for smaller screens */
+    .header__nav ul li{
+        font-size: 15px;
+    }
+}
+
+/* Media query for mobile screens (max-width 480px) */
+@media (max-width: 480px) {
+    /* Remove left padding for nav list */
+    .header__nav ul {
+        padding-left: 0;
+    }
+
+    /* Hide header title on mobile */
+    .header__content h1{
+        display: none;
+    }
+}

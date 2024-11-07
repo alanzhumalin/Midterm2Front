@@ -1,0 +1,256 @@
+/* Global reset: Set margin and padding to 0 for all elements */
+body, html {
+    font-family: 'Comfortaa', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header content layout and alignment */
+.header__content {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Image styling inside header */
+.header__content img {
+    height: 35px;
+    width: 35px;
+}
+
+/* Suggestions dropdown styling */
+#suggestions {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 200px;
+    left: 33%;
+    overflow-y: auto;
+    position: absolute;
+    top: 90%;
+    width: 20%;
+    z-index: 1000;
+    display: none;
+}
+
+/* Styling for each suggestion item inside the dropdown */
+.suggestion-item {
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Hover effect for suggestion items */
+.suggestion-item:hover {
+    background-color: #ddd;
+}
+
+/* Movie card container styling */
+.movie {
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Button styling inside movie card */
+.movie button {
+    align-self: center;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 5px 10px;
+    transition: background-color 0.3s, border 0.3s;
+    width: 100%;
+}
+
+/* Hover effect for movie button */
+.movie button:hover {
+    background-color: #7300ff;
+}
+
+/* Image styling inside movie card */
+.movie img {
+    height: auto;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+/* Movie title styling */
+.movie h3 {
+    flex-grow: 1;
+    margin: 0;
+}
+
+/* Grid layout for movie cards */
+#moviesGrid {
+    display: grid;
+    gap: 40px 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 10px;
+}
+
+/* Search box styling */
+#searchBox {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #333;
+    font-size: 16px;
+    max-width: 400px;
+    padding: 10px 15px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+/* Sort options dropdown styling */
+#sortOptions {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    max-width: 300px;
+    padding: 15px;
+    width: 100%;
+}
+
+/* Watchlist grid layout */
+#watchlist {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 10px;
+}
+
+/* Watchlist movie card styling */
+#watchlist .movie {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Watchlist container padding */
+#watchlistContainer {
+    padding: 20px;
+}
+
+/* Modal background styling */
+.modal {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* Modal content styling */
+.modal-content {
+    background-color: #fefefe;
+    border: 1px solid #888;
+    margin: 15% auto;
+    padding: 20px;
+    width: 50%;
+}
+
+/* Close button styling inside modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Hover effect for close button */
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Media queries for responsiveness */
+
+/* Adjust suggestions box for smaller screens */
+@media (max-width: 1386px){
+    #suggestions{
+        left: 25%;
+        width: 30%;
+    }
+    .modal-content{
+        margin: 27% auto;
+    }
+}
+
+/* Adjust suggestions box for smaller screens */
+@media (max-width: 1000px){
+    #suggestions{
+        left: 17%;
+        width: 40%;
+    }
+    .modal-content{
+        margin: 35% auto;
+    }
+}
+
+/* Adjust suggestions box for smaller screens */
+@media (max-width: 740px){
+    #suggestions{
+        left: 7%;
+        width: 50%;
+    }
+    .modal-content{
+        margin: 45% auto;
+    }
+}
+
+/* Adjust suggestions box and modal for very small screens */
+@media (max-width: 604px){
+    #suggestions{
+        left: 5%;
+        width: 50%;
+    }
+    .modal-content{
+        margin: 55% auto;
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 436px){
+    .modal-content p{
+        font-size: 15px;
+    }
+    .movie img{
+        max-width: 250px;
+        align-self: center;
+        width: 100%;
+    }
+    .movie button{
+        max-width: 250px;
+        width: 100%;
+    }
+    .modal{
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-content{
+        align-items: center;
+        justify-content: center;
+    }
+}

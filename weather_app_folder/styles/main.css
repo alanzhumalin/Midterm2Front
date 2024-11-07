@@ -1,0 +1,275 @@
+/* Reset default styling for HTML elements */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* Base styling for body */
+body {
+    line-height: 1;
+    font-family: 'Outfit', sans-serif;
+    background-color: rgb(54, 54, 54); /* Dark background */
+    color: rgb(255, 0, 212); /* Bright pink font color */
+}
+
+/* Remove bullet points from lists */
+ol, ul {
+    list-style: none;
+}
+
+/* Remove quotes from blockquote and q elements */
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* Set table borders to collapse */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Container to center content with a max-width */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Header section styles */
+.header__content img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Pointer cursor on links */
+a {
+    cursor: pointer;
+}
+
+.header {
+    background-color: rgb(0, 0, 0); /* Black header */
+}
+
+.header__content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header__content p {
+    color: yellow;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Center main content */
+.main__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 20px;
+}
+
+/* Styling for weather box */
+.main_weather_box {
+    width: 550px;
+    max-width: 100%;
+    padding: 40px 90px;
+    background-color: black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Styling for main text within the weather box */
+.main_weather_box p {
+    font-size: 30px;
+}
+
+/* Input field styling */
+input {
+    border-radius: 15px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+/* Container for input button section */
+.main__weather__box__input__button {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+/* Styles for geo-location button */
+#geoButton {
+    margin-left: 20px;
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+    background-color: rgb(22, 255, 22); /* Bright green */
+    padding: 5px 9px;
+    font-weight: 500;
+}
+#geoButton:hover {
+    background-color: rgb(11, 132, 11); /* Darker green on hover */
+    cursor: pointer;
+}
+
+/* Styles for unit toggle button */
+#unitToggle {
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+    background-color: rgb(204, 255, 0); /* Bright yellow */
+    padding: 5px 9px;
+    font-weight: 500;
+}
+#unitToggle:hover {
+    background-color: rgb(191, 212, 0); /* Darker yellow on hover */
+    cursor: pointer;
+}
+
+/* Suggestions dropdown styling */
+#suggestions {
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    max-width: 224px;
+    z-index: 10;
+}
+
+#suggestions div {
+    padding: 8px;
+    cursor: pointer;
+}
+
+#suggestions div:hover {
+    background: #f0f0f0;
+}
+
+/* Weather sections styling */
+.weather-section {
+    margin-bottom: 20px;
+}
+
+/* Styling for forecast section */
+.forecast-section {
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.forecast-day {
+    height: 200px;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+    box-sizing: border-box;
+}
+
+/* Styling for current weather display */
+#currentWeather {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+    .main_weather_box {
+        padding: 30px 70px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main_weather_box {
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .forecast-section {
+        padding: 20px;
+    }
+    .main_weather_box {
+        padding: 20px;
+        width: 100%;
+    }
+    .forecast-day {
+        width: 30%;
+    }
+    .header__content p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 553px) {
+    .main__weather__box__input__button {
+        display: flex;
+        flex-direction: column;
+    }
+    #geoButton, #unitToggle {
+        font-size: 16px;
+        padding: 4px 8px;
+        margin: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__content p {
+        font-size: 16px;
+    }
+    .main_weather_box p {
+        font-size: 24px;
+    }
+    input {
+        font-size: 14px;
+    }
+    #geoButton, #unitToggle {
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+}

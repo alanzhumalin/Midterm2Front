@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the page that appears in the browser tab -->
+    <title>Favorites</title>
+    
+    <link rel="stylesheet" href="../styles/general.css"> 
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/favorites.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header section with the website name and navigation menu -->
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="header__content">
+                    <h1>RecipeApp</h1>
+                    <!-- Navigation menu -->
+                    <nav class="header__nav">
+                        <ul>
+                            <!-- Links to different pages (Home and Favorites) -->
+                            <li><a href="../pages/homePage.html">Home</a></li>
+                            <li><a href="../pages/favoritesPage.html">Favorites</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main content section where favorite recipes would be displayed -->
+    <section id="main__text">
+        <p>
+            <!-- This message will show if there are no favorites yet -->
+            No favorites added yet!
+        </p>
+    </section>
+
+    <!-- This is the main section where recipe results would appear dynamically -->
+    <main id="recipe-results" class="container"></main>
+
+    <!-- Linking the JavaScript file that handles the functionality of the favorites page -->
+    <script src="../scripts/favorites.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header section -->
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="header__content">
+                    <!-- Logo link redirects to the homepage -->
+                    <a href="./index.html"><img src="../assets/logo.svg" alt="Logo"></a>
+                    <!-- App name link redirects to the homepage -->
+                    <a href="./index.html" style="text-decoration: none;">
+                        <p>WeatherApp</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Current weather section - populated dynamically with JavaScript -->
+    <div id="currentWeather" class="weather-section">
+    </div>
+
+    <!-- Main content section for user input and controls -->
+    <main class="main">
+        <div class="container">
+            <div class="main__wrapper">
+                <div class="main__content">
+                    <!-- Main weather box for input field and buttons -->
+                    <div class="main_weather_box">
+                        <p>
+                            Check your weather
+                        </p>
+                        
+                        <div class="main__weather__box__input__button">
+                            <!-- Input field for entering the city name -->
+                            <div class="main__weather__box__input">
+                                <input type="text" id="cityInput" placeholder="Enter city name" autocomplete="off">
+                                <!-- Suggestions will appear here based on user input -->
+                                <div id="suggestions"></div> 
+                            </div>
+
+                            <!-- Button to fetch weather based on the user's current location -->
+                            <button id="geoButton">Use Current Location</button>
+                            <!-- Button to toggle temperature units (°C / °F) -->
+                            <button id="unitToggle">°C / °F</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Forecast section - populated dynamically with JavaScript -->
+    <div id="forecast" class="forecast-section">
+    </div>
+
+    <!-- Link to external JavaScript file for app functionality -->
+    <script src="../scripts/app.js"></script>
+</body>
+</html>

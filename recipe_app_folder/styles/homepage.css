@@ -1,0 +1,318 @@
+/* Main content paragraph styling */
+#main-content p {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Suggestions dropdown styling */
+.suggestions {
+    position: absolute;
+    background: white;
+    width: calc(100% - 10px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    top: 100%;
+    left: 5px;
+    z-index: 1000;
+}
+
+/* Main text paragraph styling */
+.main__text p {
+    display: flex;
+    font-size: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Individual suggestion item styling */
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Hover effect for suggestion items */
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Recipe Grid container styling */
+#recipe-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates a responsive grid */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Recipe Card container styling */
+.recipe-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Recipe Card image styling */
+.recipe-card img {
+    width: 90%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Recipe Card description paragraph styling */
+.recipe-card p {
+    text-align: left;
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Hover effect for Recipe Card */
+.recipe-card:hover {
+    transform: scale(1.05);
+}
+
+/* Modal container styling */
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+}
+
+/* Modal box styling */
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    position: fixed;
+}
+
+/* Recipe Modal styling */
+#recipe-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+
+/* Modal content styling */
+.modal-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin: 3% auto;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 90%;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+/* Modal content title styling */
+.modal-content h2 {
+    font-size: 25px;
+    padding: 15px;
+}
+
+/* Modal content subtitle styling */
+.modal-content h3 {
+    font-size: 25px;
+    padding: 15px;
+}
+
+/* List item styling in modal */
+.modal-content ul li {
+    font-size: 18px;
+    list-style: disc;
+}
+
+/* Ordered list item styling in modal */
+.modal-content ol li{
+    font-size: 16px;
+}
+
+/* Button styling inside modal */
+.modal-content button {
+    color: white;
+    margin-top: 13px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(233, 163, 58);
+    cursor: pointer;
+}
+
+/* Button hover effect inside modal */
+.modal-content button:hover {
+    background-color: rgb(151, 93, 6);
+}
+
+/* Modal content paragraph styling */
+.modal-content p {
+    font-size: 13px;
+}
+
+/* Modal content image styling */
+.modal-content img {
+    border-radius: 8px;
+    max-width: 70%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Close button styling */
+.close {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 40px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Close button hover effect */
+.close:hover {
+    color: red;
+}
+
+/* Recipe card title styling */
+.recipe-card h3 {
+    font-size: 25px;
+    padding: 15px 0px;
+}
+@media (max-width:1920px){
+    .modal-content img{
+        max-width: 40%;
+    }
+    .modal-content ul li{
+        font-size: 10px;
+    }
+}
+
+/* Media query for screens smaller than 995px */
+@media (max-width: 995px) {
+    /* Adjust modal content width */
+    .modal-content {
+        width: 50%;
+    }
+
+    /* Adjust font size in ordered list */
+    .modal-content ol li{
+        font-size: 18px;
+    }
+
+    /* Adjust font size in unordered list */
+    .modal-content ul li{
+        font-size: 14px;
+    }
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    /* Adjust main text paragraph font size */
+    .main__text p{
+        font-size: 25px;
+    }
+
+    /* Adjust padding for recipe card */
+    .recipe-card {
+        padding: 10px;
+    }
+
+    /* Make search input field responsive */
+    #search-input {
+        width: 100%;
+    }
+
+    /* Adjust grid for recipe results */
+    #recipe-results {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* More responsive grid */
+    }
+
+    /* Adjust modal content width */
+    .modal-content {
+        width: 50%;
+    }
+
+    /* Adjust font size for modal content h3 */
+    .modal-content h3{
+        font-size: 18px;
+    }
+
+    /* Adjust font size for modal content ordered list */
+    .modal-content ol li{
+        font-size: 14px;
+    }
+}
+
+/* Media query for screens smaller than 480px */
+@media (max-width: 480px) {
+    /* Adjust padding for recipe card */
+    .recipe-card {
+        padding: 5px;
+    }
+
+    /* Make search input responsive */
+    #search-input {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    /* Adjust max height for modal content */
+    .modal-content {
+        max-height: 90%;
+    }
+
+    /* Adjust font size for modal content paragraph */
+    .modal-content p {
+        font-size: 8px;
+    }
+
+    /* Adjust font size for modal content unordered list */
+    .modal-content ul li{
+        font-size: 10px;
+    }
+
+    /* Adjust button styling inside modal */
+    .modal-content button {
+        padding: 5px;
+        font-size: 9px;
+    }
+
+    /* Adjust font size for modal content h3 */
+    .modal-content h3{
+        font-size: 14px;
+    }
+
+    /* Adjust font size for modal content h2 */
+    .modal-content h2{
+        font-size: 16px;
+    }
+
+    /* Adjust font size for modal content ordered list */
+    .modal-content ol li{
+        font-size: 7px;
+    }
+}
