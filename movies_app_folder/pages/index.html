@@ -3,31 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Movies App</title>
-
     <link rel="stylesheet" href="../styles/style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Here i used font from Googlefonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Main header section with navigation and search -->
+    <!-- In Header section, there are logo, search input, suggestions and sort options -->
     <header class="header">
         <div class="container">
             <div class="header__wrapper">
                 <div class="header__content">
-                    <!-- Link to the homepage with the cinema icon -->
+                    <!-- The logo with the link to the homepage -->
                     <a href="./index.html">
                         <img src="../assets/cinema.svg" alt="Cinema Icon">
                     </a>
                     
-                    <!-- Search box for users to search for movies -->
+                    <!-- The input that doing searching -->
                     <input type="text" id="searchBox" placeholder="Search movies...">
 
-                    <!-- Suggestions dropdown that appears as the user types -->
+                    <!-- Suggestions is shown when user type more than 2 characters -->
                     <div id="suggestions" class="suggestions"></div>
         
                     <!-- Sort options dropdown for sorting movies -->
@@ -41,23 +39,23 @@
         </div>
     </header>
     
-    <!-- Grid section where movies will be dynamically loaded -->
+    <!-- The moviesGrid shows grid with the movies that is loaded from api -->
     <div id="moviesGrid"></div>
 
-    <!-- Modal for displaying more details about a selected movie -->
+    <!-- The movieModal section shows modal with details of the movie when user click to the movie -->
     <div id="movieModal" class="modal">
         <div class="modal-content">
         </div>
     </div>
 
-    <!-- Section to display the user's watchlist -->
+    <!-- The watchlistContainer shows watchlist that user added to-->
     <div id="watchlistContainer">
         <h2>My Watchlist</h2>
-        <!-- Grid section for displaying movies in the watchlist -->
+        <!-- The grid section for displaying movies in the watchlist -->
         <div id="watchlist"></div>
     </div>
     
-    <!-- Scripts to load the API data and handle the app logic -->
+    <!-- Scripts to load the API data and handle the app logic and load movies from the api -->
     <script src="../scripts/api.js"></script>
     <script src="../scripts/main.js"></script>
 </body>

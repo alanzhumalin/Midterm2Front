@@ -1,31 +1,31 @@
-// Event listener for user input in the search box
+// Event listener for user input from the search input boz 
 document.getElementById('searchBox').addEventListener('input', async (event) => {
     const searchQuery = event.target.value;
 
-    // Only fetch movies if the search query length is greater than 2 characters
+    // Starts fetching movies when the legth of typed characters more than 2 
     if (searchQuery.length > 2) {
         const movies = await fetchMovies(searchQuery);
         displayMovies(movies.results);
     }
 });
 
-// Event listener for sorting options change
+// Event listener for sorting when user change the type of sorting in the dropbar
 document.getElementById('sortOptions').addEventListener('change', async () => {
     const searchQuery = document.getElementById('searchBox').value;
 
-    // Only fetch movies if the search query length is greater than 2 characters
+    // Starts fetching movies when the legth of typed characters more than 2 
     if (searchQuery.length > 2) {
         const movies = await fetchMovies(searchQuery);
-        const sortedMovies = sortMovies(movies.results); // Sort movies based on selected option
+        const sortedMovies = sortMovies(movies.results); // Sort movies based on selected option by user
         displayMovies(sortedMovies);
     }
 });
 
-// Function to sort movies based on the selected sorting option
+// Function to sort movies based on the user's selected option with sorting
 function sortMovies(movies) {
     const sortOption = document.getElementById('sortOptions').value;
 
-    // Sorting logic based on the selected option
+    // Implementing the logic of sorting based on the user's option
     if (sortOption === "popularity.desc") {
         return movies.sort((a, b) => b.popularity - a.popularity);
     } else if (sortOption === "release_date.desc") {
@@ -37,17 +37,17 @@ function sortMovies(movies) {
     return movies; // Return unsorted movies if no sorting option matched
 }
 
-// Function to display the movies on the page
+// Function to display the movies on the page in grid 
 function displayMovies(movies) {
     const grid = document.getElementById('moviesGrid');
 
-    // Display message if no movies are found
+    // Display message if no movies are found from API response
     if (movies.length === 0) {
         grid.innerHTML = "<p>No movies found. Try a different search.</p>";
         return;
     }
 
-    // Generate HTML for each movie and display in the grid
+    // Creating HTML section for each movie and display in the grid view
     const movieElements = movies.map(movie => {
         const posterPath = movie.poster_path
             ? `https://image.tmdb.org/t/p/w200${movie.poster_path}`
@@ -65,15 +65,15 @@ function displayMovies(movies) {
         `;
     }).join('');
     
-    grid.innerHTML = movieElements; // Inject movie elements into the grid
+    grid.innerHTML = movieElements; // Inserting the movie elements into the grid
 }
 
-// Function to show detailed movie information in a modal
+// Function to show the detail of the movie information in a modal
 async function showMovieDetails(movieId) {
     const movieDetails = await fetchMovieDetails(movieId);
     const modal = document.getElementById('movieModal');
     
-    // Populate the modal with the movie details
+    // Filling the modal with the movie details
     modal.innerHTML = `
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -84,21 +84,21 @@ async function showMovieDetails(movieId) {
         </div>
     `;
     
-    modal.style.display = 'block'; // Show the modal
+    modal.style.display = 'block'; // Show the modal with movie's information
 }
 
-// Function to close the movie details modal
+// Function to close the modal of movie details
 function closeModal() {
     document.getElementById('movieModal').style.display = 'none';
 }
 
-// Function to handle movie selection from suggestions
+// Function to control the selection of a movie from the suggested ones
 function selectMovie(movieId) {
     showMovieDetails(movieId);
     document.getElementById('suggestions').style.display = 'none'; // Hide suggestions after selection
 }
 
-// Function to add a movie to the watchlist
+// Function to insert a movie to the watchlist
 function addToWatchlist(event, movieId, title, posterPath) {
     event.stopPropagation(); // Prevent triggering other click events
 
@@ -116,20 +116,20 @@ function addToWatchlist(event, movieId, title, posterPath) {
     }
 }
 
-// Function to display the watchlist
+// Function to display the watchlist with movies
 function displayWatchlist() {
     const watchlistContainer = document.getElementById('watchlist');
     
     // Retrieve the current watchlist from localStorage or initialize an empty array
     let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
 
-    // Display a message if the watchlist is empty
+    // Display a empty watchlist message if the watchlist is empty
     if (watchlist.length === 0) {
         watchlistContainer.innerHTML = "<p>Your watchlist is empty.</p>";
         return;
     }
 
-    // Generate HTML for each movie in the watchlist
+    // Create HTML for each movie in the watchlist
     watchlistContainer.innerHTML = watchlist.map(movie => `
         <div class="movie">
             <img src="https://image.tmdb.org/t/p/w200${movie.posterPath}" alt="${movie.title}">
@@ -149,14 +149,14 @@ function removeFromWatchlist(movieId) {
     // Save the updated watchlist back to localStorage
     localStorage.setItem('watchlist', JSON.stringify(watchlist));
     
-    // Refresh the watchlist display
+    // Updating the watchlist display
     displayWatchlist();
 }
 
 // Initialize the watchlist display when the page loads
 displayWatchlist();
 
-// Event listener to close the modal when clicked outside
+// Event listener to close the modal when clicked outside of the container
 window.onclick = function(event) {
     const modal = document.getElementById('movieModal');
     if (event.target === modal) {
@@ -164,7 +164,7 @@ window.onclick = function(event) {
     }
 }
 
-// Event listener for input in the search box to display suggestions
+// Event listener for input section in the search box to display suggestions
 document.getElementById('searchBox').addEventListener('input', async (event) => {
     const searchQuery = event.target.value;
     const suggestionsBox = document.getElementById('suggestions');
@@ -177,7 +177,7 @@ document.getElementById('searchBox').addEventListener('input', async (event) => 
     if (searchQuery.length > 2) {
         const movies = await fetchMovies(searchQuery);
         
-        // Get top 5 movie suggestions
+        // Showing top 5 movie suggestions
         const filteredMovies = movies.results.slice(0, 5);
         
         filteredMovies.forEach(movie => {
@@ -185,39 +185,39 @@ document.getElementById('searchBox').addEventListener('input', async (event) => 
             suggestionItem.classList.add('suggestion-item');
             suggestionItem.textContent = movie.title;
             
-            // Add event listener to select movie when clicked
+            // Add event listener to select movie when suggestion is clicked
             suggestionItem.addEventListener('click', () => {
                 document.getElementById('searchBox').value = movie.title; 
                 suggestionsBox.innerHTML = ''; // Clear suggestions
                 suggestionsBox.style.display = 'none'; // Hide suggestions box
-                displayMovies([movie]); // Display selected movie
+                displayMovies([movie]); // Display the modal of selected movie
             });
 
             suggestionsBox.appendChild(suggestionItem); // Add suggestion item to the suggestions box
         });
 
-        // Show the suggestions box if there are suggestions
+        // Show the suggestions box if there are any suggestions
         if (filteredMovies.length > 0) {
             suggestionsBox.style.display = 'block';
         }
     }
 });
 
-// Function to fetch movies based on a search query
+// Function to fetch movies based on a search input 
 async function fetchMovies(query) {
     const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${apiKey}`);
     const data = await response.json();
     return data;
 }
 
-// Event listener to hide suggestions when clicking outside the search box or suggestions box
+// Event listener to hide suggestions when clicking outside the search input box or suggestions box in the page
 const searchBox = document.getElementById('searchBox');
 const suggestions = document.getElementById('suggestions');
 const buttons = document.querySelectorAll('button'); 
 
 document.addEventListener('click', function(event) {
     if (!searchBox.contains(event.target) && !suggestions.contains(event.target) && !Array.from(buttons).includes(event.target)) {
-        suggestions.style.display = 'none'; // Hide suggestions if clicked outside
+        suggestions.style.display = 'none'; // Hide suggestions if clicked outside of the box
     }
 });
 

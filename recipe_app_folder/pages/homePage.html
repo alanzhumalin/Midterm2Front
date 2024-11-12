@@ -3,68 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Title of the page shown in the browser tab -->
     <title>RecipeApp</title>
-    
     <link rel="stylesheet" href="../styles/general.css"> 
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/homepage.css">
     
+    <!-- Here i used font from Googlefonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header section of the page containing the website title and search bar -->
-    <header class="header">
-        <div class="container">
-            <div class="header__wrapper">
-                <div class="header__content">
-                    <!-- Website title -->
-                    <h1>RecipeApp</h1>
-                    
-                    <!-- Search bar wrapper with an icon and input field for searching recipes -->
-                    <div class="header__search__wrapper">
-                        <img src="../assets/Icon/searchIcon.png" alt="Search Icon"/> <!-- Search icon -->
-                        <div class="header__search">
-                            <!-- Input field for entering search terms (recipes) -->
-                            <input type="text" id="search-input" placeholder="Search for recipes" />
-                            <!-- Div to show search suggestions dynamically -->
-                            <div id="search-suggestions" class="suggestions"></div>
-                        </div>
+    <!-- Header section includes the site name, a search input to look up recipes, and navigation links to Home and Favorites pages -->
+<header class="header">
+    <div class="container">
+        <div class="header__wrapper">
+            <div class="header__content">
+                <!-- Website title -->
+                <h1>RecipeApp</h1>
+                
+                <!-- Search bar area with an icon and input box for typing recipe names -->
+                <div class="header__search__wrapper">
+                    <img src="../assets/Icon/searchIcon.png" alt="Search Icon"/> <!-- Search icon image -->
+                    <div class="header__search">
+                        <!-- Input field where users type their recipe search queries -->
+                        <input type="text" id="search-input" placeholder="Search for recipes" />
+                        <!-- Container to show search suggestions as the user types -->
+                        <div id="search-suggestions" class="suggestions"></div>
                     </div>
-                    
-                    <!-- Navigation menu for other pages (Home and Favorites) -->
-                    <nav class="header__nav">
-                        <ul>
-                            <li><a href="../pages/homePage.html">Home</a></li>
-                            <li><a href="../pages/favoritesPage.html">Favorites</a></li>
-                        </ul>
-                    </nav>
                 </div>
+                
+                <!-- Navigation menu with links to other pages (Home and Favorites) -->
+                <nav class="header__nav">
+                    <ul>
+                        <li><a href="../pages/homePage.html">Home</a></li>
+                        <li><a href="../pages/favoritesPage.html">Favorites</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
-    </header>
-    
-    <!-- Main section showing a prompt for users to search for recipes -->
-    <section class="main__text">
-        <p>Search for recipes here!</p>
-    </section>
+    </div>
+</header>
 
-    <!-- Main content section where search results or recipes will be displayed -->
-    <section id="main-content" class="container">
-        <!-- This section will dynamically display the content, like recipe results -->
-    </section>
-    
-    <!-- Section for showing recipe results (could be dynamically populated by JavaScript) -->
-    <main id="recipe-results" class="container"></main>
+<!-- Main section prompting users to search for recipes -->
+<section class="main__text">
+    <p>Search for recipes here!</p>
+</section>
 
-    <!-- Hidden modal container to display recipe details or other popups (initially hidden) -->
-    <div id="recipe-modal" class="modal-container" style="display:none;"></div>
+<!-- Section where main content, such as search results or recipes, will appear -->
+<section id="main-content" class="container">
+    <!-- Dynamic content like recipe search results will be displayed here -->
+</section>
 
-    <!-- Linking to the main script that handles the page functionality (search, results, etc.) -->
-    <script src="../scripts/script.js"></script>
+<!-- Main container for displaying recipe search results -->
+<main id="recipe-results" class="container"></main>
+
+<!-- Modal container for showing detailed recipe information or popups (hidden by default) -->
+<div id="recipe-modal" class="modal-container" style="display:none;"></div>
+
+<!-- Script that handles search functionality, displaying results, etc. -->
+<script src="../scripts/script.js"></script>
 </body>
 </html>
+
